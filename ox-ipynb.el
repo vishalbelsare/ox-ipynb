@@ -82,7 +82,7 @@
 (require 'ox-org)
 (require 'json)
 
-(unless (string-match "^9\\.[2-9][\\.0-9]*" (org-version))
+(unless (version-list-<= (version-to-list "9.2") (version-to-list (org-version)))
   (warn "org 9.2+ is required for `ox-ipynb'. Earlier versions do not currently work."))
 
 ;; Helper functions to replace s.el functionality
